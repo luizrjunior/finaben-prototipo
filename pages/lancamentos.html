@@ -9,9 +9,9 @@
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -24,7 +24,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="../../index.html" class="nav-link">Abençoando as Nações</a>
+        <a href="../index.html" class="nav-link">Abençoando as Nações</a>
       </li>
     </ul>
 
@@ -38,8 +38,8 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../../index.html" class="brand-link">
-      <img src="../../dist/img/AdminLTELogo.png" alt="FINABEN Logo" class="brand-image img-circle elevation-3"
+    <a href="../index.html" class="brand-link">
+      <img src="../dist/img/AdminLTELogo.png" alt="FINABEN Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">FINABEN</span>
     </a>
@@ -49,10 +49,10 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">CONGREGAÇÃO 001 - DF</a>
         </div>
       </div>
 
@@ -62,7 +62,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="index.html" class="nav-link">
+            <a href="../index.html" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
@@ -127,6 +127,12 @@
                   <p>Lançamentos</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Cálculo de Saídas</p>
+                </a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -147,7 +153,8 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item">Financeiro</li>
               <li class="breadcrumb-item active">Lançamentos</li>
             </ol>
           </div>
@@ -176,25 +183,7 @@
             </div>
             <div class="card-body">
               <div class="form-group">
-                <label for="inputStatus">UF</label>
-                <select id="inputStatus" class="form-control custom-select">
-                  <option selected disabled>Select one</option>
-                  <option>On Hold</option>
-                  <option>Canceled</option>
-                  <option>Success</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="inputCongregacao">Congregação</label>
-                <select id="inputCongregacao" class="form-control custom-select">
-                  <option selected disabled>Select one</option>
-                  <option>On Hold</option>
-                  <option>Canceled</option>
-                  <option>Success</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Periodo de:</label>
+                <label>Periodo de</label>
                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
                   <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate">
                   <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
@@ -203,7 +192,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label>até:</label>
+                <label>até</label>
                 <div class="input-group date" id="finaldate" data-target-input="nearest">
                   <input type="text" class="form-control datetimepicker-input" data-target="#finaldate">
                   <div class="input-group-append" data-target="#finaldate" data-toggle="datetimepicker">
@@ -211,13 +200,57 @@
                   </div>
                 </div>
               </div>
+              <div class="form-group">
+                <label for="inputStatus">Estado Congregação</label>
+                <select id="inputStatus" class="form-control custom-select">
+                  <option selected disabled>-- TODOS --</option>
+                  <option value="ac">Acre</option>
+                  <option value="al">Alagoas</option>
+                  <option value="am">Amazonas</option>
+                  <option value="ap">Amapá</option>
+                  <option value="ba">Bahia</option>
+                  <option value="ce">Ceará</option>
+                  <option value="df">Distrito Federal</option>
+                  <option value="es">Espírito Santo</option>
+                  <option value="go">Goiás</option>
+                  <option value="ma">Maranhão</option>
+                  <option value="mt">Mato Grosso</option>
+                  <option value="ms">Mato Grosso do Sul</option>
+                  <option value="mg">Minas Gerais</option>
+                  <option value="pa">Pará</option>
+                  <option value="pb">Paraíba</option>
+                  <option value="pr">Paraná</option>
+                  <option value="pe">Pernambuco</option>
+                  <option value="pi">Piauí</option>
+                  <option value="rj">Rio de Janeiro</option>
+                  <option value="rn">Rio Grande do Norte</option>
+                  <option value="ro">Rondônia</option>
+                  <option value="rs">Rio Grande do Sul</option>
+                  <option value="rr">Roraima</option>
+                  <option value="sc">Santa Catarina</option>
+                  <option value="se">Sergipe</option>
+                  <option value="sp">São Paulo</option>
+                  <option value="to">Tocantins</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="inputCongregacao">Congregação</label>
+                <select id="inputCongregacao" class="form-control custom-select">
+                  <option selected disabled>-- TODAS --</option>
+                  <option>CONGREGAÇÃO 001</option>
+                  <option>CONGREGAÇÃO 002</option>
+                  <option>CONGREGAÇÃO 003</option>
+                  <option>CONGREGAÇÃO 004</option>
+                  <option>CONGREGAÇÃO 005</option>
+                </select>
+              </div>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
               <input type="submit" value="Filtrar" class="btn btn-success">
-              <input type="submit" value="Adicionar Novo Lançamento" class="btn btn-warning">
-              <a href="#" class="btn btn-secondary">Fechar</a>
+              <input type="button" value="Adicionar Novo Lançamento" class="btn btn-warning" onclick="location.href='cad-lancamento.html'">
+              <a href="../index.html" class="btn btn-secondary">Fechar</a>
             </div>
           </div>
         </div>
@@ -240,39 +273,29 @@
               <table class="table table-striped projects">
                 <thead>
                 <tr>
-                  <th style="width: 1%">#</th>
-                  <th style="width: 20%">Data Lançamento</th>
+                  <th>#</th>
+                  <th>Data</th>
                   <th>Categoria</th>
-                  <th style="width: 30%">Tipo Lançamento</th>
-                  <th style="width: 15%" class="text-center">Valor</th>
-                  <th style="width: 20%"></th>
+                  <th>Tipo</th>
+                  <th>Valor</th>
+                  <th></th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
+                  <td>#</td>
                   <td>
-                    #
-                  </td>
-                  <td>
-                    <a>
-                      AdminLTE v3
-                    </a>
+                    <a>CONGREGAÇÃO 001 - DF</a>
                     <br/>
                     <small>
                       Created 01.01.2019
                     </small>
                   </td>
-                  <td>
-                    DIZIMO
-                  </td>
-                  <td>
-                    RECEITA
-                  </td>
-                  <td class="project-state">
-                    R$ 6.000,00
-                  </td>
+                  <td>DIZIMO</td>
+                  <td>ENTRADA</td>
+                  <td class="text-right">R$ 6.000,00</td>
                   <td class="project-actions text-right">
-                    <a class="btn btn-info btn-sm" href="#">
+                    <a class="btn btn-info btn-sm" href="edit-lancamento.html">
                       <i class="fas fa-pencil-alt">
                       </i>
                       Editar
@@ -285,29 +308,19 @@
                   </td>
                 </tr>
                 <tr>
+                  <td>#</td>
                   <td>
-                    #
-                  </td>
-                  <td>
-                    <a>
-                      AdminLTE v3
-                    </a>
+                    <a>CONGREGAÇÃO 001 - DF</a>
                     <br/>
                     <small>
                       Created 01.01.2019
                     </small>
                   </td>
-                  <td>
-                    DIZIMO
-                  </td>
-                  <td>
-                    RECEITA
-                  </td>
-                  <td class="project-state">
-                    R$ 6.000,00
-                  </td>
+                  <td>OFERTA</td>
+                  <td>ENTRADA</td>
+                  <td class="text-right">R$ 6.000,00</td>
                   <td class="project-actions text-right">
-                    <a class="btn btn-info btn-sm" href="#">
+                    <a class="btn btn-info btn-sm" href="edit-lancamento.html">
                       <i class="fas fa-pencil-alt">
                       </i>
                       Editar
@@ -320,29 +333,19 @@
                   </td>
                 </tr>
                 <tr>
+                  <td>#</td>
                   <td>
-                    #
-                  </td>
-                  <td>
-                    <a>
-                      AdminLTE v3
-                    </a>
+                    <a>CONGREGAÇÃO 001 - DF</a>
                     <br/>
                     <small>
                       Created 01.01.2019
                     </small>
                   </td>
-                  <td>
-                    DIZIMO
-                  </td>
-                  <td>
-                    RECEITA
-                  </td>
-                  <td class="project-state">
-                    R$ 6.000,00
-                  </td>
+                  <td>OFERTA ESPECIAL</td>
+                  <td>ENTRADA</td>
+                  <td class="text-right">R$ 6.000,00</td>
                   <td class="project-actions text-right">
-                    <a class="btn btn-info btn-sm" href="#">
+                    <a class="btn btn-info btn-sm" href="edit-lancamento.html">
                       <i class="fas fa-pencil-alt">
                       </i>
                       Editar
@@ -355,29 +358,19 @@
                   </td>
                 </tr>
                 <tr>
+                  <td>#</td>
                   <td>
-                    #
-                  </td>
-                  <td>
-                    <a>
-                      AdminLTE v3
-                    </a>
+                    <a>CONGREGAÇÃO 001 - DF</a>
                     <br/>
                     <small>
                       Created 01.01.2019
                     </small>
                   </td>
-                  <td>
-                    DIZIMO
-                  </td>
-                  <td>
-                    RECEITA
-                  </td>
-                  <td class="project-state">
-                    R$ 6.000,00
-                  </td>
+                  <td>OFERTA DE MISSÕES</td>
+                  <td>ENTRADA</td>
+                  <td class="text-right">R$ 6.000,00</td>
                   <td class="project-actions text-right">
-                    <a class="btn btn-info btn-sm" href="#">
+                    <a class="btn btn-info btn-sm" href="edit-lancamento.html">
                       <i class="fas fa-pencil-alt">
                       </i>
                       Editar
@@ -390,29 +383,19 @@
                   </td>
                 </tr>
                 <tr>
+                  <td>#</td>
                   <td>
-                    #
-                  </td>
-                  <td>
-                    <a>
-                      AdminLTE v3
-                    </a>
+                    <a>CONGREGAÇÃO 001 - DF</a>
                     <br/>
                     <small>
                       Created 01.01.2019
                     </small>
                   </td>
-                  <td>
-                    DIZIMO
-                  </td>
-                  <td>
-                    RECEITA
-                  </td>
-                  <td class="project-state">
-                    R$ 6.000,00
-                  </td>
+                  <td>DIZIMO</td>
+                  <td>ENTRADA</td>
+                  <td class="text-right">R$ 6.000,00</td>
                   <td class="project-actions text-right">
-                    <a class="btn btn-info btn-sm" href="#">
+                    <a class="btn btn-info btn-sm" href="edit-lancamento.html">
                       <i class="fas fa-pencil-alt">
                       </i>
                       Editar
@@ -430,11 +413,8 @@
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
-
         </div>
       </div>
-
-
     </section>
     <!-- /.content -->
   </div>
@@ -457,12 +437,12 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+<script src="../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+<script src="../dist/js/demo.js"></script>
 </body>
 </html>

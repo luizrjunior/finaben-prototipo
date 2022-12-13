@@ -127,6 +127,12 @@
                   <p>Lançamentos</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Cálculo de Saídas</p>
+                </a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -143,12 +149,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Lançamentos</h1>
+            <h1>Adicionar Novo Lançamento</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Lançamentos</li>
+              <li class="breadcrumb-item">Financeiro</li>
+              <li class="breadcrumb-item active">Adicionar Novo Lançamento</li>
             </ol>
           </div>
         </div>
@@ -159,11 +166,21 @@
     <section class="content">
 
       <div class="row">
-        <div class="col-3">
+        <div class="col-6">
+          <div id="alertSuccess" class="alert alert-success alert-dismissible" style="display: none">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fas fa-check"></i> Alerta!</h5>
+            Lançamento de Conta adicionado com sucesso.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
           <!-- Default box -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Filtro de Lançamentos</h3>
+              <h3 class="card-title">Cadastro de Lançamento de Conta</h3>
 
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -176,25 +193,33 @@
             </div>
             <div class="card-body">
               <div class="form-group">
-                <label for="inputStatus">UF</label>
-                <select id="inputStatus" class="form-control custom-select">
-                  <option selected disabled>-- TODAS --</option>
-                  <option>On Hold</option>
-                  <option>Canceled</option>
-                  <option>Success</option>
+                <label for="inputStatus">Estado Congregação</label>
+                <select id="inputStatus" class="form-control custom-select" disabled>
+                  <option>DF</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="inputCongregacao">Congregação</label>
-                <select id="inputCongregacao" class="form-control custom-select">
-                  <option selected disabled>-- TODAS --</option>
-                  <option>On Hold</option>
-                  <option>Canceled</option>
-                  <option>Success</option>
+                <select id="inputCongregacao" class="form-control custom-select" disabled>
+                  <option>CONGREGAÇÃO 001</option>
                 </select>
               </div>
               <div class="form-group">
-                <label>Periodo de:</label>
+                <label for="inputCategoria">Categoria da Conta</label>
+                <select id="inputCategoria" class="form-control custom-select">
+                  <option>SEM CATEGORIA</option>
+                  <option>DÍZIMO</option>
+                  <option>OFERTA</option>
+                  <option>OFERTA ESPECIAL</option>
+                  <option>OFERTA DE MISSÕES</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Descrição</label>
+                <input class="form-control" type="text">
+              </div>
+              <div class="form-group">
+                <label>Data do Lançamento</label>
                 <div class="input-group date" id="reservationdate" data-target-input="nearest">
                   <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate">
                   <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
@@ -203,234 +228,23 @@
                 </div>
               </div>
               <div class="form-group">
-                <label>até:</label>
-                <div class="input-group date" id="finaldate" data-target-input="nearest">
-                  <input type="text" class="form-control datetimepicker-input" data-target="#finaldate">
-                  <div class="input-group-append" data-target="#finaldate" data-toggle="datetimepicker">
-                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                <label>Valor do Lançamento</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
                   </div>
+                  <input type="text" class="form-control">
                 </div>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <input type="submit" value="Filtrar" class="btn btn-success">
-              <input type="submit" value="Adicionar Novo Lançamento" class="btn btn-warning">
-              <a href="#" class="btn btn-secondary">Fechar</a>
+              <input type="submit" value="Salvar" class="btn btn-success" onclick="$('#alertSuccess').show();">
+              <input type="button" value="Limpar" class="btn btn-warning" onclick="location.href='cad-lancamento.html'">
+              <a href="lancamentos.html" class="btn btn-secondary">Voltar</a>
             </div>
           </div>
-        </div>
-        <div class="col-9">
-          <!-- Default box -->
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Tabela de Lançamentos</h3>
-
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-            <div class="card-body p-0">
-              <table class="table table-striped projects">
-                <thead>
-                <tr>
-                  <th style="width: 1%">#</th>
-                  <th style="width: 20%">Data Lançamento</th>
-                  <th>Categoria</th>
-                  <th style="width: 30%">Tipo Lançamento</th>
-                  <th style="width: 15%" class="text-center">Valor</th>
-                  <th style="width: 20%"></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>
-                    #
-                  </td>
-                  <td>
-                    <a>
-                      AdminLTE v3
-                    </a>
-                    <br/>
-                    <small>
-                      Created 01.01.2019
-                    </small>
-                  </td>
-                  <td>
-                    DIZIMO
-                  </td>
-                  <td>
-                    RECEITA
-                  </td>
-                  <td class="project-state">
-                    R$ 6.000,00
-                  </td>
-                  <td class="project-actions text-right">
-                    <a class="btn btn-info btn-sm" href="#">
-                      <i class="fas fa-pencil-alt">
-                      </i>
-                      Editar
-                    </a>
-                    <a class="btn btn-danger btn-sm" href="#">
-                      <i class="fas fa-trash">
-                      </i>
-                      Remover
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    #
-                  </td>
-                  <td>
-                    <a>
-                      AdminLTE v3
-                    </a>
-                    <br/>
-                    <small>
-                      Created 01.01.2019
-                    </small>
-                  </td>
-                  <td>
-                    DIZIMO
-                  </td>
-                  <td>
-                    RECEITA
-                  </td>
-                  <td class="project-state">
-                    R$ 6.000,00
-                  </td>
-                  <td class="project-actions text-right">
-                    <a class="btn btn-info btn-sm" href="#">
-                      <i class="fas fa-pencil-alt">
-                      </i>
-                      Editar
-                    </a>
-                    <a class="btn btn-danger btn-sm" href="#">
-                      <i class="fas fa-trash">
-                      </i>
-                      Remover
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    #
-                  </td>
-                  <td>
-                    <a>
-                      AdminLTE v3
-                    </a>
-                    <br/>
-                    <small>
-                      Created 01.01.2019
-                    </small>
-                  </td>
-                  <td>
-                    DIZIMO
-                  </td>
-                  <td>
-                    RECEITA
-                  </td>
-                  <td class="project-state">
-                    R$ 6.000,00
-                  </td>
-                  <td class="project-actions text-right">
-                    <a class="btn btn-info btn-sm" href="#">
-                      <i class="fas fa-pencil-alt">
-                      </i>
-                      Editar
-                    </a>
-                    <a class="btn btn-danger btn-sm" href="#">
-                      <i class="fas fa-trash">
-                      </i>
-                      Remover
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    #
-                  </td>
-                  <td>
-                    <a>
-                      AdminLTE v3
-                    </a>
-                    <br/>
-                    <small>
-                      Created 01.01.2019
-                    </small>
-                  </td>
-                  <td>
-                    DIZIMO
-                  </td>
-                  <td>
-                    RECEITA
-                  </td>
-                  <td class="project-state">
-                    R$ 6.000,00
-                  </td>
-                  <td class="project-actions text-right">
-                    <a class="btn btn-info btn-sm" href="#">
-                      <i class="fas fa-pencil-alt">
-                      </i>
-                      Editar
-                    </a>
-                    <a class="btn btn-danger btn-sm" href="#">
-                      <i class="fas fa-trash">
-                      </i>
-                      Remover
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    #
-                  </td>
-                  <td>
-                    <a>
-                      AdminLTE v3
-                    </a>
-                    <br/>
-                    <small>
-                      Created 01.01.2019
-                    </small>
-                  </td>
-                  <td>
-                    DIZIMO
-                  </td>
-                  <td>
-                    RECEITA
-                  </td>
-                  <td class="project-state">
-                    R$ 6.000,00
-                  </td>
-                  <td class="project-actions text-right">
-                    <a class="btn btn-info btn-sm" href="#">
-                      <i class="fas fa-pencil-alt">
-                      </i>
-                      Editar
-                    </a>
-                    <a class="btn btn-danger btn-sm" href="#">
-                      <i class="fas fa-trash">
-                      </i>
-                      Remover
-                    </a>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card -->
-
         </div>
       </div>
 
